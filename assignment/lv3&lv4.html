@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content">
+		留言板<ul id="words"></ul>
+	</div>
+    <div id="box">
+    <textarea id="con"rows="5" cols="85"></textarea>
+    <button id="add">发送</button>
+    <button id="del">删除</button>
+   <div id="color">选一下颜色，年轻人就喜欢花里胡哨的
+    <span id="red"></span>
+    <span id="black"></span>
+    <span id="blue"></span>
+    <span id="pink"></span>
+    <span id="yellow"></span>
+    <span id="orange"></span>
+    <span id="purple"></span>
+    <span id="lawngreen"></span>
+    <span id="navy"></span>
+    </div>
+</div>
+    
+</body>
+<style>
+    #content{
+        font-size: x-large;
+        font-weight: bold;
+
+    }
+    #box{
+margin-top: 30%;
+
+    }
+    button {
+        background-color: rgb(255, 0, 157);
+        color: rgb(118, 244, 248);
+        border-radius: 30px;
+    }
+    #color{
+        display: flex;
+        height: 28px;
+        margin-top: 5px;
+        height: 30px;
+    }
+#red{
+    background-color:  red;
+    width: 30px;
+    margin-left: 10px;
+}
+#black{
+    background-color:  black;
+    width: 30px;
+    margin-left: 10px;
+}
+#blue{
+    background-color:  blue;
+    width: 30px;
+    margin-left: 10px;
+}
+#pink{
+    background-color:  pink;
+    width: 30px;
+    margin-left: 10px;
+}
+#orange{
+    background-color:  orange;
+    width: 30px;
+    margin-left: 10px;
+}
+#purple{
+    background-color:  purple;
+    width: 30px;
+    margin-left: 10px;
+}
+#lawngreen{
+    background-color:  lawngreen;
+    width: 30px;
+    margin-left: 10px;
+}
+#navy{
+    background-color:  navy;
+    width: 30px;
+    margin-left: 10px;
+}</style>
+<script>
+var add = document.getElementById("add")
+var del = document.getElementById("del")
+var ul = document.getElementById("words")
+var text = document.querySelector('textarea')
+var string ,c = "black";
+add.onclick = function (){
+    if(text.value == ''){
+        alert("说点什么,不要拘束，想说什么说什么"+String.fromCodePoint('0x1F60F'));
+        return false;
+    }else{
+        var div =document.createElement('div');
+        div.innerHTML = text.value;
+        ul.insertBefore(div,ul.children[0]);
+        let i = document.querySelectorAll('ul')
+        i[0].firstElementChild.style.color=c
+        text.value='';
+        console.log(i)}
+}
+
+del.onclick = function (){
+    if(ul.children.length==0){
+        alert("没东西，你删什么？？！！"+String.fromCodePoint('0x1f612'))
+    }else{
+        ul.removeChild(ul.children[0]);
+    }
+}
+red.onclick=function(){
+text.style.color='red';
+ c = 'red'
+}
+black.onclick=function(){
+text.style.color='black';
+ c = 'black'
+}
+blue.onclick=function(){
+text.style.color='blue';
+ c = 'blue'
+}
+pink.onclick=function(){
+text.style.color='pink';
+ c = 'pink'
+}
+yellow.onclick=function(){
+text.style.color='yellow';
+ c = 'yellow'
+}
+orange.onclick=function(){
+text.style.color='orange';
+ c = 'orange'
+}
+purple.onclick=function(){
+text.style.color='purple';
+ c = 'purple'
+}
+lawngreen.onclick=function(){
+text.style.color='lawngreen';
+ c = 'lawngreen'
+}
+navy.onclick=function(){
+text.style.color='navy';
+ c = 'navy'
+}
+
+</script>
+
+</html>
